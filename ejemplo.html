@@ -13,10 +13,36 @@
             <a href="instalacion.html">Instalación</a>
             <a href="ejemplo.html">Ejemplo AJAX</a>
         </nav>
+        
         <h1>Ejemplo Práctico: AJAX</h1>
-        <p>Presiona el botón para cargar usuarios desde una API externa sin recargar la página.</p>
+        <p>Este ejemplo muestra cómo jQuery gestiona eventos y peticiones asíncronas para actualizar la interfaz sin recargar la página.</p>
+
+        <h2>Funcionamiento técnico</h2>
+        <p>Al hacer clic en el botón, jQuery captura el evento, ejecuta una petición AJAX hacia una API externa, procesa la respuesta en formato JSON y la inyecta dinámicamente en el DOM.</p>
+        <p>El código incluye un bloque de <strong>error</strong>, el cual se activa automáticamente si la petición falla (por ejemplo, debido a problemas de conexión o a que la URL no esté disponible), permitiendo informar al usuario sobre el fallo en lugar de dejar la interfaz inactiva.</p>
+
+        <h2>Código JavaScript (app.js)</h2>
+        <pre><code>$('#btnCargar').click(function() {
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/users',
+        method: 'GET',
+        success: function(data) {
+            let html = '&lt;ul&gt;';
+            $.each(data, function(index, user) {
+                html += '&lt;li&gt;' + user.name + ' - ' + user.email + '&lt;/li&gt;';
+            });
+            html += '&lt;/ul&gt;';
+            $('#resultado').html(html);
+        },
+        error: function() {
+            $('#resultado').html('&lt;p&gt;Error al cargar los datos.&lt;/p&gt;');
+        }
+    });
+});</code></pre>
+
+        <h2>Ejecución</h2>
         <button id="btnCargar">Cargar Datos de Usuarios</button>
-        <div id="resultado" style="margin-top: 20px;"></div>
+        <div id="resultado" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
