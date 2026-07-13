@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    color: #333;
+}
+
+nav {
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+h1,
+h2 {
+    color: #007bff;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 4px;
+}

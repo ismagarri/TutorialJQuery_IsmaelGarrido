@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Instalación - Tutorial jQuery</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="justificacion.html">Justificación</a>
+            <a href="instalacion.html">Instalación</a>
+            <a href="ejemplo.html">Ejemplo AJAX</a>
+        </nav>
+        <h1>Instalación y Configuración</h1>
+        
+        <h2>Métodos de implementación</h2>
+        
+        <h3>1. Referencia vía CDN (Recomendado para aprendizaje)</h3>
+        <p>Agrega esta línea antes de cerrar la etiqueta <code>&lt;/body&gt;</code> en tu HTML:</p>
+        <pre><code>&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;</code></pre>
+        <ul>
+            <li><strong>Pros:</strong> Carga rápida desde servidores globales y caché del navegador.</li>
+            <li><strong>Contras:</strong> Requiere conexión activa a internet.</li>
+        </ul>
+
+        <h3>2. Descarga local (Recomendado para entornos cerrados)</h3>
+        <p>Descarga el archivo desde jquery.com, guárdalo en tu carpeta (ej. <code>js/jquery.min.js</code>) y enlázalo así:</p>
+        <pre><code>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+        <ul>
+            <li><strong>Pros:</strong> Funciona sin internet y tienes control total del archivo.</li>
+            <li><strong>Contras:</strong> Mayor peso en tu propio servidor.</li>
+        </ul>
+
+        <h2>¿Cómo invocarlo en JavaScript?</h2>
+        <p>Una vez cargada la librería, debes asegurarte de que el DOM esté listo antes de ejecutar código:</p>
+        <pre><code>$(document).ready(function() {
+    // Tu código jQuery aquí
+    console.log("jQuery está listo para usarse");
+    
+    // Ejemplo de selección e interacción básica:
+    $('h1').css('color', 'red'); 
+});</code></pre>
+        <p>El símbolo <code>$</code> es la función principal que da acceso a todas las herramientas de la biblioteca.</p>
+    </div>
+</body>
+</html>

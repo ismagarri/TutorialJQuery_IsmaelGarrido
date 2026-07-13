@@ -6,10 +6,13 @@ $(document).ready(function() {
             success: function(data) {
                 let html = '<ul>';
                 $.each(data, function(index, user) {
-                    html += `<li>${user.name} - ${user.email}</li>`;
+                    html += '<li>' + user.name + ' - ' + user.email + '</li>';
                 });
                 html += '</ul>';
                 $('#resultado').html(html);
+            },
+            error: function() {
+                $('#resultado').html('<p>Error al cargar los datos.</p>');
             }
         });
     });
