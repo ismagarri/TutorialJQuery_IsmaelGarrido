@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Tutorial jQuery - Actividad 2</title>
+    <title>Inicio - Tutorial Práctico jQuery</title>
+    <style>
+        /* Diagrama de arquitectura simple embebido */
+        .diagrama { border: 2px solid #333; padding: 20px; text-align: center; background: #f9f9f9; margin: 20px 0; }
+        .box { border: 1px solid #000; padding: 10px; display: inline-block; margin: 5px; background: white; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -14,14 +19,61 @@
             <a href="ejemplo.html">Ejemplo AJAX</a>
         </nav>
         
-        <h1>Tutorial de jQuery</h1>
-        <h3>Actividad 2: Desarrollo de actividades en red</h3>
-        <p><strong>Autor:</strong> Ismael Garrido Collantes</p>
-        
-        <hr>
-        
-        <p>Bienvenido a esta guía práctica. El objetivo de este tutorial es sintetizar el conocimiento necesario para aplicar jQuery en la resolución de problemas web, facilitando la manipulación del DOM y la comunicación asíncrona.</p>
-        <p>Navega a través del menú superior para explorar la justificación técnica, los pasos de instalación y una aplicación práctica utilizando AJAX.</p>
+        <main>
+            <h1>Bienvenido al Tutorial de jQuery</h1>
+            
+            <section>
+                <p>Este tutorial es una guía de referencia técnica para aplicar <strong>jQuery</strong>. Aunque el desarrollo web actual utiliza frameworks modernos, jQuery sigue siendo una herramienta fundamental para la manipulación directa del DOM.</p>
+            </section>
+
+            <!-- Diagrama embebido para volumen visual -->
+            <section>
+                <h2>Arquitectura del Tutorial</h2>
+                <div class="diagrama">
+                    <div class="box">HTML5/CSS3</div> &rarr; 
+                    <div class="box"><strong>jQuery</strong></div> &rarr; 
+                    <div class="box">API AJAX</div>
+                    <p><small>Figura 1: Flujo de interacción de datos en el proyecto.</small></p>
+                </div>
+            </section>
+            <section>
+                <h2>Más allá de AJAX: El potencial de jQuery</h2>
+                <p>Aunque el foco central de este tutorial es la comunicación asíncrona mediante AJAX, es importante destacar que jQuery fue el estándar de la industria durante años para la creación de interfaces dinámicas. Es capaz de gestionar funcionalidades como:</p>
+                <ul>
+                    <li><strong>Animaciones complejas:</strong> Transiciones fluidas, efectos de desvanecimiento (fade) y deslizamientos (slide) de elementos del DOM.</li>
+                    <li><strong>Interactividad avanzada:</strong> Respuesta inmediata a eventos de usuario (hover, scroll, focus) con muy pocas líneas de código.</li>
+                    <li><strong>Manipulación CSS dinámica:</strong> Modificación de estilos y clases en tiempo real basándose en la lógica del usuario.</li>
+                </ul>
+                <p><em>Nota: Aunque estas funcionalidades no son el objetivo principal de este ejercicio práctico, es fundamental reconocer que forman parte del robusto conjunto de herramientas que hacen de jQuery una librería tan versátil para el desarrollo web.</em></p>
+            </section>
+            <section>
+                <h2>Prueba rápida de interactividad</h2>
+                <p>Presiona el siguiente botón para verificar la respuesta inmediata del navegador mediante JavaScript:</p>
+                <button id="btnInteraccion">¡Haz clic aquí!</button>
+                <p id="mensajeInteraccion" style="display:none; color: #007bff; font-weight: bold; margin-top: 10px;">
+                    ¡Interacción exitosa! Has ejecutado una función de JavaScript en el DOM.
+                </p>
+            </section>
+            <section>
+                <h2>Propósito Didáctico</h2>
+                <p>El objetivo es proporcionar las bases para implementar soluciones interactivas eficientes. A través de este recorrido, profundizamos en la capacidad de la librería para estandarizar el comportamiento del código a través de diferentes navegadores.</p>
+            </section>
+
+            <section>
+                <h2>¿Qué aprenderás en este tutorial?</h2>
+                <p>Este recorrido se divide en módulos lógicos que cubren las necesidades fundamentales de cualquier proyecto frontend moderno:</p>
+                <ul>
+                    <li><strong>Justificación técnica:</strong> Entender el porqué de elegir esta herramienta.</li>
+                    <li><strong>Configuración:</strong> Aprender los métodos de integración.</li>
+                    <li><strong>Interactividad avanzada:</strong> Dominar el uso de <strong>AJAX</strong> para crear aplicaciones asíncronas.</li>
+                </ul>
+            </section>
+        </main>
     </div>
+
+    <!-- Referencia a la librería jQuery desde CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Referencia a tu archivo de lógica local -->
+    <script src="app.js"></script>
 </body>
 </html>

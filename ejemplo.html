@@ -19,10 +19,11 @@
 
         <h2>Funcionamiento técnico</h2>
         <p>Al hacer clic en el botón, jQuery captura el evento, ejecuta una petición AJAX hacia una API externa, procesa la respuesta en formato JSON y la inyecta dinámicamente en el DOM.</p>
-        <p>El código incluye un bloque de <strong>error</strong>, el cual se activa automáticamente si la petición falla (por ejemplo, debido a problemas de conexión o a que la URL no esté disponible), permitiendo informar al usuario sobre el fallo en lugar de dejar la interfaz inactiva.</p>
+        <p>El código incluye un bloque de <strong>error</strong>, el cual se activa automáticamente si la petición falla (por ejemplo, debido a problemas de conexión), permitiendo informar al usuario sobre el fallo.</p>
 
-        <h2>Código JavaScript (app.js)</h2>
-        <pre><code>$('#btnCargar').click(function() {
+        <h2>Caso 1: Listado de Usuarios</h2>
+        <p>En este primer escenario, recuperamos un array de objetos con información de usuarios.</p>
+        <pre><code>$('#btnCargarUsuarios').click(function() {
     $.ajax({
         url: 'https://jsonplaceholder.typicode.com/users',
         method: 'GET',
@@ -32,17 +33,40 @@
                 html += '&lt;li&gt;' + user.name + ' - ' + user.email + '&lt;/li&gt;';
             });
             html += '&lt;/ul&gt;';
-            $('#resultado').html(html);
+            $('#resultadoUsuarios').html(html);
         },
         error: function() {
-            $('#resultado').html('&lt;p&gt;Error al cargar los datos.&lt;/p&gt;');
+            $('#resultadoUsuarios').html('&lt;p&gt;Error al cargar usuarios.&lt;/p&gt;');
+        }
+    });
+});</code></pre>
+
+        <h2>Caso 2: Gestión de Publicaciones (Escenario adicional)</h2>
+        <p>Para demostrar la versatilidad de la función <code>$.ajax()</code>, implementamos un segundo consumo de API enfocado en publicaciones (posts). Aquí utilizamos el parámetro de consulta <code>_limit=5</code>, lo cual permite filtrar la cantidad de datos recibidos directamente desde la fuente.</p>
+        <pre><code>$('#btnCargarPosts').click(function() {
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts?_limit=5',
+        method: 'GET',
+        success: function(data) {
+            let html = '&lt;h3&gt;Últimos Posts:&lt;/h3&gt;&lt;ul&gt;';
+            $.each(data, function(index, post) {
+                html += '&lt;li&gt;' + post.title + '&lt;/li&gt;';
+            });
+            html += '&lt;/ul&gt;';
+            $('#resultadoPosts').html(html);
+        },
+        error: function() {
+            $('#resultadoPosts').html('&lt;p&gt;Error al cargar posts.&lt;/p&gt;');
         }
     });
 });</code></pre>
 
         <h2>Ejecución</h2>
-        <button id="btnCargar">Cargar Datos de Usuarios</button>
-        <div id="resultado" style="margin-top: 20px; border: 1px solid #ccc; padding: 10px;"></div>
+        <button id="btnCargarUsuarios">Cargar Datos de Usuarios</button>
+        <div id="resultadoUsuarios" style="margin-top: 10px; border: 1px solid #ccc; padding: 10px;"></div>
+        
+        <button id="btnCargarPosts" style="margin-top: 20px;">Cargar Últimos Posts</button>
+        <div id="resultadoPosts" style="margin-top: 10px; border: 1px solid #ccc; padding: 10px;"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Instalación - Tutorial jQuery</title>
+    <title>Instalación - Tutorial Práctico jQuery</title>
 </head>
 <body>
     <div class="container">
@@ -13,36 +13,50 @@
             <a href="instalacion.html">Instalación</a>
             <a href="ejemplo.html">Ejemplo AJAX</a>
         </nav>
-        <h1>Instalación y Configuración</h1>
         
-        <h2>Métodos de implementación</h2>
-        
-        <h3>1. Referencia vía CDN (Recomendado para aprendizaje)</h3>
-        <p>Agrega esta línea antes de cerrar la etiqueta <code>&lt;/body&gt;</code> en tu HTML:</p>
-        <pre><code>&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;</code></pre>
-        <ul>
-            <li><strong>Pros:</strong> Carga rápida desde servidores globales y caché del navegador.</li>
-            <li><strong>Contras:</strong> Requiere conexión activa a internet.</li>
-        </ul>
+        <main>
+            <h1>Instalación y Configuración</h1>
 
-        <h3>2. Descarga local (Recomendado para entornos cerrados)</h3>
-        <p>Descarga el archivo desde jquery.com, guárdalo en tu carpeta (ej. <code>js/jquery.min.js</code>) y enlázalo así:</p>
-        <pre><code>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
-        <ul>
-            <li><strong>Pros:</strong> Funciona sin internet y tienes control total del archivo.</li>
-            <li><strong>Contras:</strong> Mayor peso en tu propio servidor.</li>
-        </ul>
+            <section>
+                <h2>Métodos de implementación</h2>
+                <p>Existen dos vías principales para integrar jQuery en tu proyecto, dependiendo de si buscas agilidad en el desarrollo o independencia total del servidor.</p>
 
-        <h2>¿Cómo invocarlo en JavaScript?</h2>
-        <p>Una vez cargada la librería, debes asegurarte de que el DOM esté listo antes de ejecutar código:</p>
-        <pre><code>$(document).ready(function() {
-    // Tu código jQuery aquí
-    console.log("jQuery está listo para usarse");
-    
-    // Ejemplo de selección e interacción básica:
-    $('h1').css('color', 'red'); 
-});</code></pre>
-        <p>El símbolo <code>$</code> es la función principal que da acceso a todas las herramientas de la biblioteca.</p>
+                <h3>1. Referencia vía CDN (Content Delivery Network)</h3>
+                <p>Es la opción más eficiente para entornos de aprendizaje y desarrollo web público.</p>
+                <pre><code>&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;</code></pre>
+                <ul>
+                    <li><strong>Ventajas:</strong> Aprovecha la caché del navegador de los usuarios si han visitado otros sitios que usan el mismo CDN, reduciendo tiempos de carga.</li>
+                    <li><strong>Consideración técnica:</strong> Obliga a mantener una conexión activa a internet durante la etapa de desarrollo.</li>
+                </ul>
+
+                <h3>2. Descarga local (Hosting propio)</h3>
+                <p>Ideal para entornos cerrados, intranets o aplicaciones que requieran disponibilidad offline.</p>
+                <p>Debes descargar el archivo <code>.min.js</code> desde <a href="https://jquery.com">jquery.com</a> y referenciarlo en tu estructura de archivos:</p>
+                <pre><code>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+                <ul>
+                    <li><strong>Ventajas:</strong> Control absoluto sobre la versión de la librería y funcionamiento garantizado sin conexión.</li>
+                    <li><strong>Consideración técnica:</strong> Incrementa ligeramente la carga de archivos en tu propio servidor.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>El Ciclo de Vida: ¿Cómo invocarlo en JavaScript?</h2>
+                <p>Uno de los errores más comunes al iniciarse con jQuery es intentar manipular elementos antes de que el navegador haya finalizado la renderización del árbol DOM. Para evitar fallos, es imperativo encapsular el código en la función de inicialización:</p>
+                
+                <pre><code>
+$(document).ready(function() {
+    // 1. Verificación de carga del DOM
+    console.log("El DOM está listo: jQuery inicializado.");
+
+    // 2. Ejemplo de manipulación de estilos
+    // Seleccionamos todos los encabezados H1 y cambiamos su color a nivel de CSS
+    $('h1').css('color', '#007bff'); 
+});
+                </code></pre>
+                
+                <p>El símbolo <code>$</code> actúa como un alias (shorthand) para la función principal <code>jQuery()</code>. Este método es la puerta de entrada a todo el API de la librería, permitiendo seleccionar elementos, gestionar eventos y aplicar animaciones con una sintaxis altamente simplificada.</p>
+            </section>
+        </main>
     </div>
 </body>
 </html>

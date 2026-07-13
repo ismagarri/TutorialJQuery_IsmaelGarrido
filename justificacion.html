@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
-    <title>Justificación - Tutorial jQuery</title>
+    <title>Justificación - Tutorial Práctico jQuery</title>
 </head>
 <body>
     <div class="container">
@@ -13,16 +13,37 @@
             <a href="instalacion.html">Instalación</a>
             <a href="ejemplo.html">Ejemplo AJAX</a>
         </nav>
-        <h1>Justificación del Framework</h1>
         
-        <h2>¿Por qué jQuery para este tutorial?</h2>
-        <p>La elección de jQuery para esta actividad se fundamenta en su capacidad para reducir la complejidad del desarrollo frontend. A diferencia de frameworks modernos que requieren configuraciones de entorno extensas (como Webpack o Node.js), jQuery permite una curva de aprendizaje inmediata, siendo ideal para comprender la lógica de manipulación del DOM y AJAX sin la sobrecarga de herramientas adicionales.</p>
-        
-        <h2>Aplicaciones y utilidad</h2>
-        <p>jQuery resulta especialmente valioso en proyectos que requieren mejoras rápidas de interactividad sobre estructuras HTML existentes. Su amplia documentación y madurez lo convierten en una herramienta robusta para tareas de mantenimiento de aplicaciones web, permitiendo ejecutar funcionalidades asíncronas de manera ágil y compatible con múltiples navegadores.</p>
+        <main>
+            <h1>Justificación del Framework</h1>
+            
+            <section>
+                <h2>¿Por qué jQuery para este tutorial?</h2>
+                <p>La elección de jQuery se fundamenta en su probada eficacia para reducir la complejidad técnica del desarrollo frontend. A diferencia de los <em>frameworks</em> modernos de tipo SPA (Single Page Application) que demandan configuraciones de entorno altamente complejas —como el uso de gestores de paquetes (NPM/Yarn), herramientas de empaquetado (Webpack, Vite) y entornos de ejecución en servidor (Node.js)—, jQuery ofrece una <strong>curva de aprendizaje inmediata</strong>.</p>
+                <p>Esta inmediatez es ideal para entornos académicos, ya que permite al estudiante enfocarse exclusivamente en la <strong>lógica de manipulación del DOM</strong> y en la arquitectura de peticiones asíncronas, sin la sobrecarga cognitiva que supone configurar una infraestructura de desarrollo profesional completa.</p>
+            </section>
 
-        <h2>Prerrequisitos técnicos</h2>
-        <p>Para la implementación de esta biblioteca, se requiere un conocimiento sólido de la sintaxis base de JavaScript. A través de este tutorial, se demuestra cómo esta biblioteca optimiza la sintaxis estándar para lograr resultados eficientes en la resolución de problemas de comunicación cliente-servidor.</p>
+            <section>
+                <h2>Aplicaciones y Utilidad en la Industria</h2>
+                <p>jQuery sigue siendo un activo valioso en proyectos reales, especialmente en los siguientes escenarios:</p>
+                <ul>
+                    <li><strong>Mantenimiento de legado:</strong> Gran parte de la infraestructura web existente utiliza jQuery, lo que hace vital su conocimiento para desarrolladores que trabajan sobre códigos base preexistentes.</li>
+                    <li><strong>Mejoras rápidas (Hot-patching):</strong> Es la herramienta predilecta cuando se requiere añadir una funcionalidad interactiva a una estructura HTML estática ya terminada, sin necesidad de refactorizar todo el proyecto.</li>
+                    <li><strong>Compatibilidad Cross-Browser:</strong> A pesar de la modernización de los navegadores, jQuery sigue garantizando un comportamiento consistente de los eventos y peticiones AJAX en entornos heterogéneos.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Prerrequisitos Técnicos y Fundamentos</h2>
+                <p>Para la implementación exitosa de esta biblioteca, se requiere un dominio sólido de la sintaxis base de <strong>JavaScript (ES6+)</strong>. Es fundamental comprender los siguientes conceptos:</p>
+                <ul>
+                    <li><strong>Selección de nodos:</strong> Capacidad de identificar elementos dentro del árbol DOM mediante selectores CSS.</li>
+                    <li><strong>Gestión de Eventos:</strong> Comprensión del modelo de propagación de eventos (`bubbling`) y su captura.</li>
+                    <li><strong>Promesas y Asincronía:</strong> Conocimiento básico sobre cómo funcionan las peticiones <code>XMLHttpRequest</code> y el manejo de flujos de datos JSON.</li>
+                </ul>
+                <p>A través de este tutorial, demostramos cómo la librería optimiza la sintaxis estándar, encapsulando peticiones complejas en métodos de alto nivel como <code>$.ajax()</code>, logrando resultados eficientes en la resolución de problemas de comunicación cliente-servidor.</p>
+            </section>
+        </main>
     </div>
 </body>
 </html>
